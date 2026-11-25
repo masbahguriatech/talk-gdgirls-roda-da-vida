@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Olhar para dentro, planejar 2027: abertura do GDGirls talks de fim de ano, GDG Porto Alegre, com a dinâmica da roda da vida. Por @masbahguriatech.">
+<meta name="theme-color" content="#E8317A">
+<title>Olhar para dentro, planejar 2027 · GDGirls</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<style>
+/* ---------- estilos dos slides ---------- */
+/* Linguagem do deck "Eu Mereço Estar Aqui" (DevFest Floripa 2026) com rosa GDGirls de destaque */
+section{
+  --bg:#F0F0F0; --ink:#1E1E1E; --ink2:#3A3A3A; --ink3:#6B6B6B; --paper:#FFFFFF;
+  --rosa:#E8317A; --rosa-claro:#FFD3E5;
+  --blue:#C3ECF6; --blue-s:#57CAFF; --green:#CCF6C5; --green-s:#5CDB6D;
+  --yellow:#FFE7A5; --yellow-s:#F9AB00;
+  background:var(--bg); color:var(--ink);
+  font-family:'Plus Jakarta Sans', Arial, sans-serif;
+  padding:96px 112px 150px; display:flex; flex-direction:column; justify-content:center; gap:40px;
+}
+section.dark{background:var(--ink); color:#F7F7F7}
+section.rosa{background:var(--rosa); color:#FFFFFF}
+section.paper{background:var(--paper)}
+section.center{align-items:center; text-align:center}
+
+h1{font-size:138px; line-height:1; letter-spacing:-.035em; font-weight:800; margin:0}
+h2{font-size:92px; line-height:1.04; letter-spacing:-.03em; font-weight:800; margin:0}
+h3{font-size:40px; line-height:1.12; letter-spacing:-.02em; font-weight:800; margin:0}
+p{font-size:36px; line-height:1.4; font-weight:500; color:var(--ink2); margin:0}
+.dark p{color:#D9D9D9}
+.rosa p{color:#FFFFFF}
+.lead{font-size:42px; line-height:1.38}
+.sm{font-size:28px; line-height:1.4; color:var(--ink3)}
+.dark .sm{color:#A8A8A8}
+.hl{color:var(--rosa)}
+.dark .hl{color:#FF7DB0}
+.mark{background:var(--rosa-claro); border-radius:8px; padding:0 8px}
+.dark .mark{background:var(--rosa); color:#FFFFFF}
+
+.eyebrow{font-size:26px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--rosa)}
+.dark .eyebrow{color:#FF7DB0}
+.rosa .eyebrow{color:#FFFFFF}
+
+.pills{display:flex; flex-wrap:wrap; gap:18px}
+.pill{border:3px solid var(--ink); border-radius:999px; padding:12px 30px; font-size:28px; font-weight:700; background:var(--paper); color:var(--ink)}
+.pill.r{background:var(--rosa-claro)} .pill.b{background:var(--blue)} .pill.g{background:var(--green)} .pill.y{background:var(--yellow)}
+.dark .pill{border-color:#F7F7F7; background:transparent; color:#F7F7F7}
+.rosa .pill{border-color:#FFFFFF; background:transparent; color:#FFFFFF}
+
+.cards{display:grid; gap:28px}
+.c2{grid-template-columns:repeat(2,1fr)} .c3{grid-template-columns:repeat(3,1fr)} .c4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--paper); border:3px solid var(--ink); border-radius:32px; padding:34px; display:flex; flex-direction:column; gap:14px; box-shadow:6px 6px 0 0 var(--ink)}
+.card h3{font-size:38px}
+.card p{font-size:28px; line-height:1.38}
+.card.r{background:var(--rosa-claro)} .card.b{background:var(--blue)} .card.g{background:var(--green)} .card.y{background:var(--yellow)}
+.card.ink{background:var(--ink)} .card.ink h3,.card.ink p{color:#F7F7F7}
+.chip{width:72px; height:72px; border:3px solid var(--ink); border-radius:22px; display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:800; color:var(--ink)}
+.chip.r{background:var(--rosa)} .chip.r p{color:#FFFFFF}
+.chip.b{background:var(--blue-s)} .chip.g{background:var(--green-s)} .chip.y{background:var(--yellow-s)}
+.chip p{font-size:34px; font-weight:800; color:var(--ink)}
+
+.row{display:flex; gap:64px; align-items:center}
+.col{display:flex; flex-direction:column; gap:28px}
+.grow{flex:1}
+
+.sig{display:flex; align-items:center; gap:20px}
+.sig p{font-size:32px; font-weight:700; color:var(--ink)}
+.dot{width:24px; height:24px; border-radius:999px; background:var(--rosa); border:3px solid var(--ink)}
+
+.foot{position:absolute; left:112px; bottom:56px; width:1696px; display:flex; justify-content:space-between}
+.foot p{font-size:24px; font-weight:700; letter-spacing:.06em; color:var(--ink3)}
+.dark .foot p{color:#8A8A8A}
+
+.photo{width:420px; height:420px; border-radius:999px; border:4px solid var(--ink); object-fit:cover; box-shadow:10px 10px 0 0 var(--rosa)}
+.qr{width:400px; height:400px; border:3px solid var(--ink); border-radius:32px; background:var(--paper); padding:22px; object-fit:contain; box-shadow:8px 8px 0 0 var(--ink)}
+
+/* agenda */
+.agenda{display:flex; flex-direction:column}
+.ag{display:flex; align-items:center; gap:40px; padding:22px 32px; border:3px solid var(--ink); background:var(--paper)}
+.ag + .ag{border-top:none}
+.ag.first{border-radius:28px 28px 0 0}
+.ag.last{border-radius:0 0 28px 28px}
+.ag.now{background:var(--rosa-claro)}
+.ag .t{font-size:32px; font-weight:800; color:var(--ink); width:130px}
+.ag .a{font-size:30px; font-weight:700; color:var(--ink); flex:1}
+.ag .w{font-size:26px; font-weight:600; color:var(--ink3); text-align:right; width:420px}
+
+/* listas de perguntas */
+.qs{display:flex; flex-direction:column; gap:26px}
+.q{display:flex; align-items:center; gap:30px}
+.q p{font-size:40px; font-weight:700; color:var(--ink); line-height:1.25}
+.dark .q p{color:#F7F7F7}
+
+.timer{font-size:220px; font-weight:800; letter-spacing:-.05em; line-height:.9; color:#FFFFFF}
+
+@keyframes sobe{from{opacity:0; transform:translateY(24px)} to{opacity:1; transform:none}}
+.in{animation:sobe .5s ease-out both}
+.in.d1{animation-delay:.12s} .in.d2{animation-delay:.24s} .in.d3{animation-delay:.36s} .in.d4{animation-delay:.48s}
+.fragment{opacity:.12}
+.fragment.visible{opacity:1}
+
+/* cores do Google */
+section{--g-blue:#4285F4; --g-red:#EA4335; --g-yellow:#FBBC04; --g-green:#34A853}
+.pill.gb{background:#D2E3FC} .pill.gr{background:#FAD2CF} .pill.gy{background:#FEEFC3} .pill.gg{background:#CEEAD6}
+.gdots{display:flex; gap:14px}
+.gdots x-shape{width:26px; height:26px}
+
+/* espaço reservado para QR code e logo */
+.ph{border:4px dashed var(--ink); border-radius:32px; background:var(--paper); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:32px; text-align:center}
+.ph p{font-size:30px; font-weight:800; color:var(--ink)}
+.ph .sm{font-size:24px; font-weight:600; color:var(--ink3)}
+.ph.qrph{width:420px; height:420px}
+.ph.logo{width:1100px; height:400px}
+
+/* patrocinadores */
+.sponsor{justify-content:center; align-items:center; text-align:center; gap:48px}
+.sponsor h2{font-size:84px}
+
+/* anfitriã */
+.mic{background:var(--rosa); border:3px solid var(--ink); border-radius:40px; box-shadow:10px 10px 0 0 var(--ink); padding:56px; display:flex; flex-direction:column; gap:20px; width:640px}
+.mic h3{font-size:64px; color:#FFFFFF; line-height:1.05}
+.mic p{font-size:32px; color:#FFFFFF}
+
+/* dinâmica */
+.stepbox{background:var(--paper); border:3px solid var(--ink); border-radius:36px; box-shadow:10px 10px 0 0 var(--ink); padding:48px; display:flex; flex-direction:column; gap:30px; width:620px}
+.stepbox .q p{font-size:34px; color:var(--ink); font-weight:700}
+.stepbox .sm{color:var(--ink3)}
+
+/* a seguir */
+.when{background:var(--rosa); border:3px solid var(--ink); border-radius:40px; box-shadow:10px 10px 0 0 var(--ink); padding:56px 64px; display:flex; flex-direction:column; justify-content:space-between; width:560px; height:640px}
+.when p{color:#FFFFFF}
+.when .big{font-size:170px; font-weight:800; letter-spacing:-.05em; line-height:.9}
+.speaker{display:flex; align-items:center; gap:28px; background:var(--paper); border:3px solid var(--ink); border-radius:999px; padding:18px 40px 18px 18px}
+.avatar{width:104px; height:104px; border-radius:999px; border:3px solid var(--ink); background:var(--rosa-claro); display:flex; align-items:center; justify-content:center}
+.avatar p{font-size:38px; font-weight:800; color:var(--ink)}
+.speaker h3{font-size:36px}
+.speaker .sm{font-size:26px}
+
+
+/* ---------- palco: 1920x1080 escalado pra caber em qualquer tela ---------- */
+html,body{height:100%;margin:0}
+body{background:#1E1E1E;overflow:hidden;font-family:'Plus Jakarta Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+#viewport{position:fixed;inset:0;overflow:hidden}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(.5);transform-origin:center center;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+#stage>section{position:absolute;inset:0;box-sizing:border-box;display:none;overflow:hidden}
+#stage>section.on{display:flex}
+#stage>section>aside{display:none}
+x-shape{display:block}
+x-shape[kind=ellipse]{border-radius:999px}
+x-shape[kind=rounded]{border-radius:16px}
+.fragment{transition:opacity .3s}
+
+#bar{position:fixed;left:0;top:0;height:5px;background:#E8317A;width:0;z-index:6;transition:width .2s}
+#hud{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px;align-items:center;z-index:5}
+#hud button,#count{font-family:inherit;font-size:14px;font-weight:700;color:#1E1E1E;background:#fff;border:2px solid #1E1E1E;border-radius:999px;padding:7px 14px;line-height:1}
+#hud button{cursor:pointer}
+#hud button:hover{background:#FFD3E5}
+#hud button:focus-visible{outline:3px solid #57CAFF;outline-offset:2px}
+#count{font-variant-numeric:tabular-nums;min-width:70px;text-align:center}
+#help{position:fixed;left:max(12px,env(safe-area-inset-left));bottom:calc(16px + env(safe-area-inset-bottom));font-size:13px;font-weight:600;color:#9E9E9E;z-index:5}
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:34vh;overflow:auto;background:#fff;border-top:3px solid #E8317A;padding:16px 20px 64px;font-size:17px;line-height:1.5;color:#1E1E1E;z-index:4;display:none}
+#notes.on{display:block}
+#notes b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#E8317A;margin-bottom:4px}
+@media (max-width:900px){#help{display:none}#hud #full{display:none}}
+@media print{
+  @page{size:1920px 1080px;margin:0}
+  body{background:#fff;overflow:visible}
+  #viewport{position:static;overflow:visible}
+  #stage{position:static;transform:none;width:auto;height:auto;box-shadow:none}
+  #stage>section{position:relative;display:flex!important;width:1920px;height:1080px;break-after:page}
+  #stage>section *{animation:none!important}
+  .fragment{opacity:1!important}
+  #hud,#help,#bar,#notes{display:none!important}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div id="viewport"><div id="stage">
+
+<!-- 01 · cover -->
+<section id="cover" data-transition="fade">
+<div class="row" style="gap:40px">
+<div class="col grow" style="gap:40px">
+<div class="pills in">
+<span class="pill gb">GDG Porto Alegre</span>
+<span class="pill r">GDGirls ✨</span>
+</div>
+<h1 data-fit="grow" style="flex:0 0 auto; font-family:'Plus Jakarta Sans', Arial, sans-serif; font-size:100px; font-weight:800; line-height:1; letter-spacing:-4.5px; margin:0" class="in d1">Olhar para dentro,<br><span style="color:#e8317a">planejar 2027</span> ✨</h1>
+<p class="lead in d2" style="max-width:1000px;translate:0 6px">GDGirls talks de fim de ano&nbsp;</p>
+<div class="gdots in d3"><x-shape kind="ellipse" style="background:#4285F4"></x-shape><x-shape kind="ellipse" style="background:#EA4335"></x-shape><x-shape kind="ellipse" style="background:#FBBC04"></x-shape><x-shape kind="ellipse" style="background:#34A853"></x-shape><x-shape kind="ellipse" style="background:#E8317A"></x-shape></div>
+</div>
+<div class="in d2" style="position:relative; flex:none; width:640px; height:640px">
+<img src="img/ambrosia.jpg" alt="Ambrosia, mascote do GDG, acenando com camiseta do GDG e tênis rosa" style="position:absolute; left:0; top:0; width:640px; height:640px; object-fit:cover; border:4px solid #1E1E1E; border-radius:48px; box-shadow:12px 12px 0 0 #E8317A; background:#FFFFFF">
+<img src="img/gdg-logo.png" alt="Logo do GDG" style="position:absolute; left:450px; top:560px; width:250px; height:139px; object-fit:contain">
+</div>
+</div>
+<aside>Boas-vindas (14h15). "Boa tarde, gurias! Que bom ver vocês aqui num sábado de fim de ano." Antes da dinâmica, apresentar quem faz a tarde acontecer: GDG Porto Alegre, GDGirls, a FIAP e os patrocinadores.</aside>
+</section>
+
+<!-- 02 · gdg-poa -->
+<section id="gdg-poa">
+<div class="row">
+<div class="col grow" style="gap:36px">
+<span class="eyebrow">Quem somos</span>
+<h2 style="font-size:104px">GDG Porto Alegre</h2>
+<p class="lead" style="max-width:1000px">A comunidade local do Google Developer Groups: gente que curte tecnologia se encontrando pra aprender, ensinar e trocar.</p>
+<div class="pills">
+<span class="pill gb">Meetups</span>
+<span class="pill gr">Talks</span>
+<span class="pill gy">Comunidade</span>
+<span class="pill gg">Networking</span>
+</div>
+</div>
+<div class="col" style="align-items:center; gap:24px; flex:none">
+<img class="qr" src="img/qr-gdg-poa.png" alt="QR code da comunidade GDG Porto Alegre" style="width:420px; height:420px">
+<span class="pill gb">Entra pra comunidade</span>
+</div>
+</div>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Apresentar o GDG Porto Alegre em 1 minuto e convidar todo mundo a entrar na comunidade pelo QR code. Deixar o slide uns segundos pra quem quiser escanear.</aside>
+</section>
+
+<!-- 03 · gdgirls -->
+<section id="gdgirls" class="rosa">
+<div class="row">
+<div class="col grow" style="gap:36px">
+<span class="eyebrow">GDGirls ✨💗</span>
+<h2 style="font-size:96px; color:#FFFFFF">O espaço das girls dentro do GDG Porto Alegre</h2>
+<p class="lead" style="max-width:1000px">Queremos movimentar muito mais em 2027.<br><b>Vamos juntas?</b> 💗</p>
+</div>
+<div class="col" style="align-items:center; gap:24px; flex:none">
+<img class="qr" src="img/qr-gdgirls.png" alt="QR code do grupo do GDGirls no WhatsApp" style="width:420px; height:420px">
+<span class="pill">Entra no grupo ✨</span>
+</div>
+</div>
+<div class="foot"><p style="color:#FFFFFF">GDGIRLS TALKS DE FIM DE ANO</p><p style="color:#FFFFFF">GDG PORTO ALEGRE</p></div>
+<aside>Convite pro grupo do WhatsApp. Ideia: perguntar o que elas gostariam de ver no GDGirls em 2027 (encontros, estudos, mentorias) e pedir pra mandarem no grupo.</aside>
+</section>
+
+<!-- 04 · fiap-marina -->
+<section id="fiap-marina">
+<div class="row">
+<div class="col grow" style="gap:36px">
+<span class="eyebrow">Nossa casa hoje</span>
+<h2 style="font-size:104px">Sede: FIAP</h2>
+<p class="lead" style="max-width:900px">Obrigada por abrir as portas pra gente aqui no Instituto Caldeira.</p>
+<div class="card b" style="width:820px"><p class="sm" style="color:#3A3A3A; font-weight:800">ANFITRIÃ</p><h3 style="font-size:48px">Marina Alano</h3><p>Community Manager, FIAP</p></div>
+</div>
+<img src="img/fiap.png" alt="Logo da FIAP" style="width:580px; height:580px; flex:none; object-fit:cover; border:3px solid #1E1E1E; border-radius:40px; box-shadow:10px 10px 0 0 #1E1E1E">
+</div>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Agradecer a FIAP e chamar a Marina pra falar. Combinar o tempo com ela antes (sugestão: 2 a 3 min). Puxar palmas quando ela terminar.</aside>
+</section>
+
+<!-- 05 · growdev -->
+<section id="growdev" class="sponsor">
+<span class="eyebrow">Patrocínio Gold</span>
+<div style="width:1100px; height:400px; background:#FFFFFF; border:3px solid #1E1E1E; border-radius:40px; box-shadow:10px 10px 0 0 #1E1E1E; display:flex; align-items:center; justify-content:center"><img src="img/growdev.png" alt="Logo da Growdev" style="width:880px; height:160px; object-fit:contain"></div>
+<h2>Obrigada, Growdev 💗</h2>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Agradecer a Growdev, patrocinadora Gold. Duas das palestrantes da tarde são de lá: a Jaqueline e a Vitória.</aside>
+</section>
+
+<!-- 06 · jaschek -->
+<section id="jaschek" class="sponsor">
+<span class="eyebrow">Patrocínio</span>
+<div style="width:1100px; height:400px; background:#1E3D2E; border:3px solid #1E1E1E; border-radius:40px; box-shadow:10px 10px 0 0 #1E1E1E; display:flex; align-items:center; justify-content:center"><img src="img/jaschek.png" alt="Logo da Jaschek Gastronomia" style="width:600px; height:318px; object-fit:contain"></div>
+<h2>Obrigada, Jaschek Gastronomia 💗</h2>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Agradecer a Jaschek Gastronomia. Se for ela que cuida do coffee do break, vale avisar aqui.</aside>
+</section>
+
+<!-- 07 · combinado -->
+<section id="combinado" class="dark">
+<span class="eyebrow in">O combinado de hoje</span>
+<h2 class="in d1" style="max-width:1450px">Aqui não tem fórmula pronta. <span class="hl">Nem cobrança.</span></h2>
+<p class="lead in d2" style="max-width:1400px">Esse é um encontro pra celebrar o que deu certo, falar dos desafios sem filtro e começar a pensar em 2027 com calma.</p>
+<div class="pills in d3">
+<span class="pill">Celebrar conquistas</span>
+<span class="pill">Falar de desafios</span>
+<span class="pill">Planejar 2027</span>
+</div>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Deixar claro o tom da tarde: acolhimento. Ninguém precisa sair daqui com um plano perfeito. Vamos falar de saúde mental, maternidade, carreira, IA e o futuro das mulheres na tecnologia. Convidar: celular no silencioso, mas pode tirar foto e postar marcando o GDG Porto Alegre.</aside>
+</section>
+
+<!-- 08 · programacao -->
+<section id="programacao">
+<span class="eyebrow">A nossa tarde</span>
+<h2 style="font-size:72px">Programação</h2>
+<div class="agenda">
+<div class="ag first now"><p class="t">14h15</p><p class="a">Abertura + dinâmica: como está a sua roda da vida hoje?</p><p class="w">Fernanda dos Santos · GDG POA</p></div>
+<div class="ag"><p class="t">14h50</p><p class="a">Pertencer, provar, cuidar: saúde mental de mulheres na tecnologia (e maternidade)</p><p class="w">Jaqueline Michaelsen · Growdev</p></div>
+<div class="ag"><p class="t">15h20</p><p class="a">Break</p><p class="w"></p></div>
+<div class="ag"><p class="t">15h30</p><p class="a">Carreira aumentada: IA e competências humanas para se destacar em 2027</p><p class="w">Tracy Freitas · FIAP</p></div>
+<div class="ag"><p class="t">16h10</p><p class="a">Checklist 2027: o que quem contrata quer ver (e por que você deve ser você)</p><p class="w">Vitória Santos · Growdev</p></div>
+<div class="ag last"><p class="t">16h40</p><p class="a">Encerramento e sorteios</p><p class="w"></p></div>
+</div>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Passar rápido pela agenda (1 min). Avisar do break às 15h20 e que tem sorteio no encerramento, então vale ficar até o fim.</aside>
+</section>
+
+<!-- 09 · quem-sou -->
+<section id="quem-sou">
+<div class="row">
+<img class="photo" src="img/fernanda.jpg" alt="Fernanda dos Santos">
+<div class="col grow">
+<span class="eyebrow">Oi, eu sou a Fernanda</span>
+<h2 style="font-size:76px">Quem abre a tarde com vocês</h2>
+<div class="cards c2">
+<div class="card r"><h3>Product Owner</h3><p>Na Santo Digital</p></div>
+<div class="card y"><h3>Coordenadora de organizadores</h3><p>GDG Porto Alegre</p></div>
+</div>
+<p class="sm">@masbahguriatech · linkedin.com/in/fernanda-dossantos</p>
+</div>
+</div>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Apresentação curta (30 s). Se quiser, uma frase pessoal: como chegou na comunidade de tecnologia por um meetup na faculdade.</aside>
+</section>
+
+<!-- 10 · transicao -->
+<section id="transicao" class="dark" data-transition="fade">
+<span class="eyebrow in">Antes de planejar 2027</span>
+<h1 class="in d1" style="font-size:124px; max-width:1500px">Como está a sua<br><span class="hl">roda da vida</span> hoje?</h1>
+<p class="lead in d2" style="max-width:1500px">Não dá pra traçar rota sem saber onde a gente está agora.<br>Então, antes de planejar, vamos olhar pra dentro.</p>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Ponte com o tema do evento: "olhar para dentro, planejar 2027". Perguntar pra sala: "Levanta a mão quem já fez uma roda da vida." Isso ajuda a calibrar quanto explicar.</aside>
+</section>
+
+<!-- 11 · o-que-e -->
+<section id="o-que-e">
+<div class="row">
+<div class="col grow">
+<span class="eyebrow">O que é</span>
+<h2 style="font-size:84px">Um retrato da sua vida<br>em 12 fatias</h2>
+<p style="max-width:860px">A roda da vida é uma ferramenta de autoavaliação: um círculo dividido em áreas, e você dá uma nota de 0 a 10 pra cada uma.</p>
+<p style="max-width:860px">O desenho que aparece mostra, de um jeito bem visual, <b>onde a vida está cheia e onde está pedindo cuidado</b>.</p>
+<p class="sm" style="max-width:860px">Ela costuma ser atribuída a Paul J. Meyer e é muito usada em coaching e desenvolvimento pessoal.</p>
+</div>
+<svg aria-label="Exemplo de roda da vida preenchida com 12 fatias de tamanhos diferentes" viewBox="-206 -206 412 412" width="620" height="620" style="width:620px;height:620px"><path d="M0.0 -39.8A39.8 39.8 0 0 1 19.9 -34.5L11.0 -19.1A22.0 22.0 0 0 0 0.0 -22.0Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 -57.6A57.6 57.6 0 0 1 28.8 -49.9L19.9 -34.5A39.8 39.8 0 0 0 0.0 -39.8Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 -75.4A75.4 75.4 0 0 1 37.7 -65.3L28.8 -49.9A57.6 57.6 0 0 0 0.0 -57.6Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 -93.2A93.2 93.2 0 0 1 46.6 -80.7L37.7 -65.3A75.4 75.4 0 0 0 0.0 -75.4Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 -111.0A111.0 111.0 0 0 1 55.5 -96.1L46.6 -80.7A93.2 93.2 0 0 0 0.0 -93.2Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 -128.8A128.8 128.8 0 0 1 64.4 -111.5L55.5 -96.1A111.0 111.0 0 0 0 0.0 -111.0Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 -146.6A146.6 146.6 0 0 1 73.3 -127.0L64.4 -111.5A128.8 128.8 0 0 0 0.0 -128.8Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 -164.4A164.4 164.4 0 0 1 82.2 -142.4L73.3 -127.0A146.6 146.6 0 0 0 0.0 -146.6Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 -182.2A182.2 182.2 0 0 1 91.1 -157.8L82.2 -142.4A164.4 164.4 0 0 0 0.0 -164.4Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 -200.0A200.0 200.0 0 0 1 100.0 -173.2L91.1 -157.8A182.2 182.2 0 0 0 0.0 -182.2Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M19.9 -34.5A39.8 39.8 0 0 1 34.5 -19.9L19.1 -11.0A22.0 22.0 0 0 0 11.0 -19.1Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M28.8 -49.9A57.6 57.6 0 0 1 49.9 -28.8L34.5 -19.9A39.8 39.8 0 0 0 19.9 -34.5Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M37.7 -65.3A75.4 75.4 0 0 1 65.3 -37.7L49.9 -28.8A57.6 57.6 0 0 0 28.8 -49.9Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M46.6 -80.7A93.2 93.2 0 0 1 80.7 -46.6L65.3 -37.7A75.4 75.4 0 0 0 37.7 -65.3Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M55.5 -96.1A111.0 111.0 0 0 1 96.1 -55.5L80.7 -46.6A93.2 93.2 0 0 0 46.6 -80.7Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M64.4 -111.5A128.8 128.8 0 0 1 111.5 -64.4L96.1 -55.5A111.0 111.0 0 0 0 55.5 -96.1Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M73.3 -127.0A146.6 146.6 0 0 1 127.0 -73.3L111.5 -64.4A128.8 128.8 0 0 0 64.4 -111.5Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M82.2 -142.4A164.4 164.4 0 0 1 142.4 -82.2L127.0 -73.3A146.6 146.6 0 0 0 73.3 -127.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M91.1 -157.8A182.2 182.2 0 0 1 157.8 -91.1L142.4 -82.2A164.4 164.4 0 0 0 82.2 -142.4Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M100.0 -173.2A200.0 200.0 0 0 1 173.2 -100.0L157.8 -91.1A182.2 182.2 0 0 0 91.1 -157.8Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M34.5 -19.9A39.8 39.8 0 0 1 39.8 -0.0L22.0 -0.0A22.0 22.0 0 0 0 19.1 -11.0Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M49.9 -28.8A57.6 57.6 0 0 1 57.6 -0.0L39.8 -0.0A39.8 39.8 0 0 0 34.5 -19.9Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M65.3 -37.7A75.4 75.4 0 0 1 75.4 -0.0L57.6 -0.0A57.6 57.6 0 0 0 49.9 -28.8Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M80.7 -46.6A93.2 93.2 0 0 1 93.2 -0.0L75.4 -0.0A75.4 75.4 0 0 0 65.3 -37.7Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M96.1 -55.5A111.0 111.0 0 0 1 111.0 -0.0L93.2 -0.0A93.2 93.2 0 0 0 80.7 -46.6Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M111.5 -64.4A128.8 128.8 0 0 1 128.8 -0.0L111.0 -0.0A111.0 111.0 0 0 0 96.1 -55.5Z" fill="#57CAFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M127.0 -73.3A146.6 146.6 0 0 1 146.6 -0.0L128.8 -0.0A128.8 128.8 0 0 0 111.5 -64.4Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M142.4 -82.2A164.4 164.4 0 0 1 164.4 -0.0L146.6 -0.0A146.6 146.6 0 0 0 127.0 -73.3Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M157.8 -91.1A182.2 182.2 0 0 1 182.2 -0.0L164.4 -0.0A164.4 164.4 0 0 0 142.4 -82.2Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M173.2 -100.0A200.0 200.0 0 0 1 200.0 -0.0L182.2 -0.0A182.2 182.2 0 0 0 157.8 -91.1Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M39.8 0.0A39.8 39.8 0 0 1 34.5 19.9L19.1 11.0A22.0 22.0 0 0 0 22.0 0.0Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M57.6 0.0A57.6 57.6 0 0 1 49.9 28.8L34.5 19.9A39.8 39.8 0 0 0 39.8 0.0Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M75.4 0.0A75.4 75.4 0 0 1 65.3 37.7L49.9 28.8A57.6 57.6 0 0 0 57.6 0.0Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M93.2 0.0A93.2 93.2 0 0 1 80.7 46.6L65.3 37.7A75.4 75.4 0 0 0 75.4 0.0Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M111.0 0.0A111.0 111.0 0 0 1 96.1 55.5L80.7 46.6A93.2 93.2 0 0 0 93.2 0.0Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M128.8 0.0A128.8 128.8 0 0 1 111.5 64.4L96.1 55.5A111.0 111.0 0 0 0 111.0 0.0Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M146.6 0.0A146.6 146.6 0 0 1 127.0 73.3L111.5 64.4A128.8 128.8 0 0 0 128.8 0.0Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M164.4 0.0A164.4 164.4 0 0 1 142.4 82.2L127.0 73.3A146.6 146.6 0 0 0 146.6 0.0Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M182.2 0.0A182.2 182.2 0 0 1 157.8 91.1L142.4 82.2A164.4 164.4 0 0 0 164.4 0.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M200.0 0.0A200.0 200.0 0 0 1 173.2 100.0L157.8 91.1A182.2 182.2 0 0 0 182.2 0.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M34.5 19.9A39.8 39.8 0 0 1 19.9 34.5L11.0 19.1A22.0 22.0 0 0 0 19.1 11.0Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M49.9 28.8A57.6 57.6 0 0 1 28.8 49.9L19.9 34.5A39.8 39.8 0 0 0 34.5 19.9Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M65.3 37.7A75.4 75.4 0 0 1 37.7 65.3L28.8 49.9A57.6 57.6 0 0 0 49.9 28.8Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M80.7 46.6A93.2 93.2 0 0 1 46.6 80.7L37.7 65.3A75.4 75.4 0 0 0 65.3 37.7Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M96.1 55.5A111.0 111.0 0 0 1 55.5 96.1L46.6 80.7A93.2 93.2 0 0 0 80.7 46.6Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M111.5 64.4A128.8 128.8 0 0 1 64.4 111.5L55.5 96.1A111.0 111.0 0 0 0 96.1 55.5Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M127.0 73.3A146.6 146.6 0 0 1 73.3 127.0L64.4 111.5A128.8 128.8 0 0 0 111.5 64.4Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M142.4 82.2A164.4 164.4 0 0 1 82.2 142.4L73.3 127.0A146.6 146.6 0 0 0 127.0 73.3Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M157.8 91.1A182.2 182.2 0 0 1 91.1 157.8L82.2 142.4A164.4 164.4 0 0 0 142.4 82.2Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M173.2 100.0A200.0 200.0 0 0 1 100.0 173.2L91.1 157.8A182.2 182.2 0 0 0 157.8 91.1Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M19.9 34.5A39.8 39.8 0 0 1 0.0 39.8L0.0 22.0A22.0 22.0 0 0 0 11.0 19.1Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M28.8 49.9A57.6 57.6 0 0 1 0.0 57.6L0.0 39.8A39.8 39.8 0 0 0 19.9 34.5Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M37.7 65.3A75.4 75.4 0 0 1 0.0 75.4L0.0 57.6A57.6 57.6 0 0 0 28.8 49.9Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M46.6 80.7A93.2 93.2 0 0 1 0.0 93.2L0.0 75.4A75.4 75.4 0 0 0 37.7 65.3Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M55.5 96.1A111.0 111.0 0 0 1 0.0 111.0L0.0 93.2A93.2 93.2 0 0 0 46.6 80.7Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M64.4 111.5A128.8 128.8 0 0 1 0.0 128.8L0.0 111.0A111.0 111.0 0 0 0 55.5 96.1Z" fill="#5CDB6D" stroke="#1E1E1E" stroke-width="0.8"/><path d="M73.3 127.0A146.6 146.6 0 0 1 0.0 146.6L0.0 128.8A128.8 128.8 0 0 0 64.4 111.5Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M82.2 142.4A164.4 164.4 0 0 1 0.0 164.4L0.0 146.6A146.6 146.6 0 0 0 73.3 127.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M91.1 157.8A182.2 182.2 0 0 1 0.0 182.2L0.0 164.4A164.4 164.4 0 0 0 82.2 142.4Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M100.0 173.2A200.0 200.0 0 0 1 0.0 200.0L0.0 182.2A182.2 182.2 0 0 0 91.1 157.8Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M0.0 39.8A39.8 39.8 0 0 1 -19.9 34.5L-11.0 19.1A22.0 22.0 0 0 0 0.0 22.0Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 57.6A57.6 57.6 0 0 1 -28.8 49.9L-19.9 34.5A39.8 39.8 0 0 0 0.0 39.8Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 75.4A75.4 75.4 0 0 1 -37.7 65.3L-28.8 49.9A57.6 57.6 0 0 0 0.0 57.6Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 93.2A93.2 93.2 0 0 1 -46.6 80.7L-37.7 65.3A75.4 75.4 0 0 0 0.0 75.4Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 111.0A111.0 111.0 0 0 1 -55.5 96.1L-46.6 80.7A93.2 93.2 0 0 0 0.0 93.2Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 128.8A128.8 128.8 0 0 1 -64.4 111.5L-55.5 96.1A111.0 111.0 0 0 0 0.0 111.0Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 146.6A146.6 146.6 0 0 1 -73.3 127.0L-64.4 111.5A128.8 128.8 0 0 0 0.0 128.8Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 164.4A164.4 164.4 0 0 1 -82.2 142.4L-73.3 127.0A146.6 146.6 0 0 0 0.0 146.6Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 182.2A182.2 182.2 0 0 1 -91.1 157.8L-82.2 142.4A164.4 164.4 0 0 0 0.0 164.4Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M0.0 200.0A200.0 200.0 0 0 1 -100.0 173.2L-91.1 157.8A182.2 182.2 0 0 0 0.0 182.2Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M-19.9 34.5A39.8 39.8 0 0 1 -34.5 19.9L-19.1 11.0A22.0 22.0 0 0 0 -11.0 19.1Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-28.8 49.9A57.6 57.6 0 0 1 -49.9 28.8L-34.5 19.9A39.8 39.8 0 0 0 -19.9 34.5Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-37.7 65.3A75.4 75.4 0 0 1 -65.3 37.7L-49.9 28.8A57.6 57.6 0 0 0 -28.8 49.9Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-46.6 80.7A93.2 93.2 0 0 1 -80.7 46.6L-65.3 37.7A75.4 75.4 0 0 0 -37.7 65.3Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-55.5 96.1A111.0 111.0 0 0 1 -96.1 55.5L-80.7 46.6A93.2 93.2 0 0 0 -46.6 80.7Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-64.4 111.5A128.8 128.8 0 0 1 -111.5 64.4L-96.1 55.5A111.0 111.0 0 0 0 -55.5 96.1Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-73.3 127.0A146.6 146.6 0 0 1 -127.0 73.3L-111.5 64.4A128.8 128.8 0 0 0 -64.4 111.5Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-82.2 142.4A164.4 164.4 0 0 1 -142.4 82.2L-127.0 73.3A146.6 146.6 0 0 0 -73.3 127.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-91.1 157.8A182.2 182.2 0 0 1 -157.8 91.1L-142.4 82.2A164.4 164.4 0 0 0 -82.2 142.4Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-100.0 173.2A200.0 200.0 0 0 1 -173.2 100.0L-157.8 91.1A182.2 182.2 0 0 0 -91.1 157.8Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M-34.5 19.9A39.8 39.8 0 0 1 -39.8 0.0L-22.0 0.0A22.0 22.0 0 0 0 -19.1 11.0Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-49.9 28.8A57.6 57.6 0 0 1 -57.6 0.0L-39.8 0.0A39.8 39.8 0 0 0 -34.5 19.9Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-65.3 37.7A75.4 75.4 0 0 1 -75.4 0.0L-57.6 0.0A57.6 57.6 0 0 0 -49.9 28.8Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-80.7 46.6A93.2 93.2 0 0 1 -93.2 0.0L-75.4 0.0A75.4 75.4 0 0 0 -65.3 37.7Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-96.1 55.5A111.0 111.0 0 0 1 -111.0 0.0L-93.2 0.0A93.2 93.2 0 0 0 -80.7 46.6Z" fill="#E8317A" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-111.5 64.4A128.8 128.8 0 0 1 -128.8 0.0L-111.0 0.0A111.0 111.0 0 0 0 -96.1 55.5Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-127.0 73.3A146.6 146.6 0 0 1 -146.6 0.0L-128.8 0.0A128.8 128.8 0 0 0 -111.5 64.4Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-142.4 82.2A164.4 164.4 0 0 1 -164.4 0.0L-146.6 0.0A146.6 146.6 0 0 0 -127.0 73.3Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-157.8 91.1A182.2 182.2 0 0 1 -182.2 0.0L-164.4 0.0A164.4 164.4 0 0 0 -142.4 82.2Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-173.2 100.0A200.0 200.0 0 0 1 -200.0 0.0L-182.2 0.0A182.2 182.2 0 0 0 -157.8 91.1Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M-39.8 0.0A39.8 39.8 0 0 1 -34.5 -19.9L-19.1 -11.0A22.0 22.0 0 0 0 -22.0 0.0Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-57.6 0.0A57.6 57.6 0 0 1 -49.9 -28.8L-34.5 -19.9A39.8 39.8 0 0 0 -39.8 0.0Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-75.4 0.0A75.4 75.4 0 0 1 -65.3 -37.7L-49.9 -28.8A57.6 57.6 0 0 0 -57.6 0.0Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-93.2 0.0A93.2 93.2 0 0 1 -80.7 -46.6L-65.3 -37.7A75.4 75.4 0 0 0 -75.4 0.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-111.0 0.0A111.0 111.0 0 0 1 -96.1 -55.5L-80.7 -46.6A93.2 93.2 0 0 0 -93.2 0.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-128.8 0.0A128.8 128.8 0 0 1 -111.5 -64.4L-96.1 -55.5A111.0 111.0 0 0 0 -111.0 0.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-146.6 0.0A146.6 146.6 0 0 1 -127.0 -73.3L-111.5 -64.4A128.8 128.8 0 0 0 -128.8 0.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-164.4 0.0A164.4 164.4 0 0 1 -142.4 -82.2L-127.0 -73.3A146.6 146.6 0 0 0 -146.6 0.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-182.2 0.0A182.2 182.2 0 0 1 -157.8 -91.1L-142.4 -82.2A164.4 164.4 0 0 0 -164.4 0.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-200.0 0.0A200.0 200.0 0 0 1 -173.2 -100.0L-157.8 -91.1A182.2 182.2 0 0 0 -182.2 0.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M-34.5 -19.9A39.8 39.8 0 0 1 -19.9 -34.5L-11.0 -19.1A22.0 22.0 0 0 0 -19.1 -11.0Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-49.9 -28.8A57.6 57.6 0 0 1 -28.8 -49.9L-19.9 -34.5A39.8 39.8 0 0 0 -34.5 -19.9Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-65.3 -37.7A75.4 75.4 0 0 1 -37.7 -65.3L-28.8 -49.9A57.6 57.6 0 0 0 -49.9 -28.8Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-80.7 -46.6A93.2 93.2 0 0 1 -46.6 -80.7L-37.7 -65.3A75.4 75.4 0 0 0 -65.3 -37.7Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-96.1 -55.5A111.0 111.0 0 0 1 -55.5 -96.1L-46.6 -80.7A93.2 93.2 0 0 0 -80.7 -46.6Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-111.5 -64.4A128.8 128.8 0 0 1 -64.4 -111.5L-55.5 -96.1A111.0 111.0 0 0 0 -96.1 -55.5Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-127.0 -73.3A146.6 146.6 0 0 1 -73.3 -127.0L-64.4 -111.5A128.8 128.8 0 0 0 -111.5 -64.4Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-142.4 -82.2A164.4 164.4 0 0 1 -82.2 -142.4L-73.3 -127.0A146.6 146.6 0 0 0 -127.0 -73.3Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-157.8 -91.1A182.2 182.2 0 0 1 -91.1 -157.8L-82.2 -142.4A164.4 164.4 0 0 0 -142.4 -82.2Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-173.2 -100.0A200.0 200.0 0 0 1 -100.0 -173.2L-91.1 -157.8A182.2 182.2 0 0 0 -157.8 -91.1Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><path d="M-19.9 -34.5A39.8 39.8 0 0 1 -0.0 -39.8L-0.0 -22.0A22.0 22.0 0 0 0 -11.0 -19.1Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-28.8 -49.9A57.6 57.6 0 0 1 -0.0 -57.6L-0.0 -39.8A39.8 39.8 0 0 0 -19.9 -34.5Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-37.7 -65.3A75.4 75.4 0 0 1 -0.0 -75.4L-0.0 -57.6A57.6 57.6 0 0 0 -28.8 -49.9Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-46.6 -80.7A93.2 93.2 0 0 1 -0.0 -93.2L-0.0 -75.4A75.4 75.4 0 0 0 -37.7 -65.3Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-55.5 -96.1A111.0 111.0 0 0 1 -0.0 -111.0L-0.0 -93.2A93.2 93.2 0 0 0 -46.6 -80.7Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-64.4 -111.5A128.8 128.8 0 0 1 -0.0 -128.8L-0.0 -111.0A111.0 111.0 0 0 0 -55.5 -96.1Z" fill="#F9AB00" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-73.3 -127.0A146.6 146.6 0 0 1 -0.0 -146.6L-0.0 -128.8A128.8 128.8 0 0 0 -64.4 -111.5Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-82.2 -142.4A164.4 164.4 0 0 1 -0.0 -164.4L-0.0 -146.6A146.6 146.6 0 0 0 -73.3 -127.0Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-91.1 -157.8A182.2 182.2 0 0 1 -0.0 -182.2L-0.0 -164.4A164.4 164.4 0 0 0 -82.2 -142.4Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="0.8"/><path d="M-100.0 -173.2A200.0 200.0 0 0 1 -0.0 -200.0L-0.0 -182.2A182.2 182.2 0 0 0 -91.1 -157.8Z" fill="#FFFFFF" stroke="#1E1E1E" stroke-width="2.5"/><circle r="22" fill="#1E1E1E"/></svg>
+</div>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Explicar a ideia em 1 min. Analogia: se fosse uma roda de bicicleta, quanto mais "redonda", mais suave ela roda. Uma roda cheia de dentes trepida. Não é sobre tirar 10 em tudo, é sobre enxergar o desequilíbrio. A roda do slide é só um exemplo.</aside>
+</section>
+
+<!-- 12 · areas -->
+<section id="areas">
+<span class="eyebrow">As 12 áreas</span>
+<h2 style="font-size:76px">Quatro grandes partes da vida</h2>
+<div class="cards c4">
+<div class="card b"><h3>Pessoal</h3><p>Saúde e disposição<br>Desenvolvimento intelectual<br>Equilíbrio emocional</p></div>
+<div class="card g"><h3>Profissional</h3><p>Carreira e realização<br>Finanças<br>Contribuição social</p></div>
+<div class="card r"><h3>Relacionamentos</h3><p>Família<br>Amor<br>Vida social</p></div>
+<div class="card y"><h3>Qualidade de vida</h3><p>Lazer e diversão<br>Plenitude e felicidade<br>Espiritualidade</p></div>
+</div>
+<p class="sm" style="max-width:1500px">Amor inclui o amor-próprio. Espiritualidade é o que te dá sentido, com ou sem religião. Se alguma área não faz sentido pra você, pode trocar por outra.</p>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Passar pelas quatro cores (1 a 2 min). Reforçar que a roda é dela: dá pra adaptar as áreas. Ex.: quem é mãe pode querer uma fatia "maternidade" (gancho pra palestra da Jaqueline).</aside>
+</section>
+
+<!-- 13 · como-fazer -->
+<section id="como-fazer">
+<span class="eyebrow">Como fazer</span>
+<h2 style="font-size:76px">Quatro passos, poucos minutos</h2>
+<div class="cards c4">
+<div class="card"><div class="chip r"><p style="color:#FFFFFF">1</p></div><h3>Dê a nota</h3><p>De 0 a 10, como cada área está <b>hoje</b>. Não como deveria estar.</p></div>
+<div class="card"><div class="chip b"><p>2</p></div><h3>Pinte</h3><p>Do centro até a nota, em cada fatia. Vale a primeira nota que vier.</p></div>
+<div class="card"><div class="chip g"><p>3</p></div><h3>Olhe o formato</h3><p>Se fosse uma roda de bicicleta, ela rodaria? Onde trepida?</p></div>
+<div class="card"><div class="chip y"><p>4</p></div><h3>Escolha uma</h3><p>Uma área pra cuidar primeiro. Só uma.</p></div>
+</div>
+<p class="sm">O 10 não é a meta. A meta é enxergar.</p>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Explicar devagar, porque é a instrução da dinâmica. Pedir pra não pensar muito em cada nota: a primeira impressão costuma ser a mais honesta. Ninguém vai ver a folha de ninguém.</aside>
+</section>
+
+<!-- 14 · dinamica -->
+<section id="dinamica" class="rosa" data-transition="fade">
+<div class="row" style="gap:72px">
+<div class="col grow" style="gap:32px">
+<span class="eyebrow in">Dinâmica · agora é com vocês</span>
+<p class="timer in d1" style="font-size:170px; white-space:nowrap">✨ 5 min</p>
+<h2 class="in d2" style="font-size:62px; color:#FFFFFF">Pega a folha e a caneta.<br>Dá a nota e pinta a sua roda.</h2>
+</div>
+<div class="stepbox in d3">
+<div class="q"><div class="chip b"><p>1</p></div><p>Uma nota de 0 a 10 pra cada área</p></div>
+<div class="q"><div class="chip g"><p>2</p></div><p>Pinta do centro até a nota</p></div>
+<div class="q"><div class="chip y"><p>3</p></div><p>Circula a área que quer cuidar primeiro</p></div>
+<p class="sm">Prefere no celular? O QR code no pé da folha abre a versão digital.</p>
+</div>
+</div>
+<aside>Distribuir folhas e canetas (melhor já deixar nas cadeiras antes de começar). Cronometrar 5 min. Colocar uma música baixinha ajuda a quebrar o silêncio. Faltando 1 min, avisar. Você pode fazer a sua junto e mostrar depois, isso dá abertura pras outras.</aside>
+</section>
+
+<!-- 15 · olhando -->
+<section id="olhando" class="dark">
+<span class="eyebrow">Olhando pra sua roda</span>
+<h2 style="font-size:80px">Quatro perguntas pra fazer pra ela</h2>
+<div class="qs">
+<div class="q fragment"><div class="chip r"><p style="color:#FFFFFF">1</p></div><p>Qual nota te surpreendeu?</p></div>
+<div class="q fragment"><div class="chip b"><p>2</p></div><p>Qual área, se subisse dois pontos, puxaria as outras junto?</p></div>
+<div class="q fragment"><div class="chip g"><p>3</p></div><p>O que está bom e você não quer perder em 2027?</p></div>
+<div class="q fragment"><div class="chip y"><p>4</p></div><p>Essa nota é sua ou é a régua dos outros?</p></div>
+</div>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Uma pergunta por clique, com uns 20 segundos de silêncio entre elas. A 2 é a mais importante: é a "área alavanca" (ex.: cuidar do sono costuma puxar saúde, humor e trabalho). A 4 conversa com a palestra de saúde mental que vem depois: muitas vezes a nota baixa vem de comparação, não da nossa realidade.</aside>
+</section>
+
+<!-- 16 · dicas -->
+<section id="dicas">
+<span class="eyebrow">Dicas práticas</span>
+<h2 style="font-size:76px">Como ajustar a roda sem se cobrar demais</h2>
+<div class="cards c3">
+<div class="card r"><h3>Uma área por vez</h3><p>Mexer em tudo ao mesmo tempo é o jeito mais rápido de não mexer em nada.</p></div>
+<div class="card y"><h3>Mire no +2, não no 10</h3><p>Sair do 4 pro 6 já muda a sua semana. E é uma meta que cabe na vida real.</p></div>
+<div class="card g"><h3>Ação pequena e com data</h3><p>"Cuidar da saúde" não é ação. "Caminhar 20 min na terça e na quinta" é.</p></div>
+<div class="card b"><h3>Procure a alavanca</h3><p>Às vezes uma área destrava várias: sono, rede de apoio, um limite no trabalho.</p></div>
+<div class="card"><h3>Refaça em junho</h3><p>No meio do ano, faça de novo e compare com a roda de hoje.</p></div>
+<div class="card ink"><h3>É foto, não sentença</h3><p>A roda mostra um momento. Ela muda, e você também.</p></div>
+</div>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Pode trazer um exemplo seu de área foco e da ação pequena que escolheu. Reforçar o espírito do evento: sem cobrança. Se a roda saiu "torta", ótimo, agora ela sabe por onde começar.</aside>
+</section>
+
+<!-- 17 · troca -->
+<section id="troca" class="dark center">
+<span class="eyebrow in">Troca · 2 minutos</span>
+<p class="lead in d1" style="max-width:1400px; color:#FF7DB0; font-weight:700">Falar em voz alta gera compromisso. E, quando a gente fala, a gente também se escuta.</p>
+<h1 class="in d2" style="font-size:90px; max-width:1696px">Vira pro lado e conta:<br>qual área você quer cuidar em 2027?</h1>
+<p class="lead in d3" style="max-width:1300px">Em 1 minuto cada: a área, por que ela e a primeira ação pequena. A nota fica com você.</p>
+<aside>2 min de conversa em dupla. É aqui que nasce o networking da tarde. Bater palma ou tocar um sininho pra encerrar. Se der tempo, pedir que 1 ou 2 pessoas compartilhem com a sala (opcional, sem pressão).</aside>
+</section>
+
+<!-- 18 · leve-pra-casa -->
+<section id="leve-pra-casa">
+<div class="row">
+<div class="col grow">
+<span class="eyebrow">Leve pra casa</span>
+<h2 style="font-size:84px">A sua roda continua com você</h2>
+<p style="max-width:1000px">Guarda a folha e marca na agenda: <b>refazer em junho</b>.</p>
+<p style="max-width:1000px">O QR code abre a <b>Minha roda da vida</b>, a versão digital da folha: você dá as notas no celular, salva e, em junho, refaz e compara com a roda de hoje.</p>
+<div class="pills">
+<span class="pill r">Abre no navegador, sem instalar nada</span>
+<span class="pill y">As notas ficam só no seu celular</span>
+</div>
+</div>
+<div class="col" style="align-items:center; gap:24px; flex:none">
+<img class="qr" src="img/qr-minha-roda.png" alt="QR code da ferramenta Minha roda da vida">
+<span class="pill r">minha-roda-da-vida.vercel.app</span>
+</div>
+</div>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Deixar esse slide uns segundos pra quem quiser escanear. A ferramenta salva a roda no próprio celular e, quando ela refizer em junho, mostra a roda anterior tracejada pra comparar.</aside>
+</section>
+
+<!-- 19 · a-seguir -->
+<section id="a-seguir">
+<div class="row" style="gap:80px">
+<div class="when in">
+<p style="font-size:30px; font-weight:800; letter-spacing:.12em">A SEGUIR</p>
+<p class="big">14h50</p>
+<p style="font-size:32px; font-weight:700">Segura a sua roda aí ✨</p>
+</div>
+<div class="col grow" style="gap:40px">
+<span class="eyebrow in d1">Próxima talk</span>
+<h2 class="in d1" style="font-size:72px">Pertencer, provar, cuidar: saúde mental de mulheres na tecnologia <span class="hl">(e maternidade)</span></h2>
+<div class="speaker in d2">
+<div class="avatar"><p>JM</p></div>
+<div class="col" style="gap:4px"><h3>Jaqueline Michaelsen</h3><p class="sm">Head of People and Culture · Growdev</p></div>
+</div>
+<p class="in d3" style="font-weight:700; color:#1E1E1E">Obrigada por olharem pra dentro com a gente 💗</p>
+</div>
+</div>
+<div class="foot"><p>GDGIRLS TALKS DE FIM DE ANO</p><p>GDG PORTO ALEGRE</p></div>
+<aside>Ponte pra próxima palestra: a área "equilíbrio emocional" e a pergunta "essa nota é sua ou é a régua dos outros?" conversam direto com o tema da Jaqueline. Chamar ela ao palco com palmas.</aside>
+</section>
+
+</div></div>
+
+<div id="notes" aria-live="polite"></div>
+<div id="help">← → passar · F tela cheia · N notas</div>
+<div id="hud">
+  <button id="prev" aria-label="Slide anterior">←</button>
+  <span id="count">1 / 1</span>
+  <button id="next" aria-label="Próximo slide">→</button>
+  <button id="notesBtn">Notas</button>
+  <button id="full">Tela cheia</button>
+</div>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage');
+  var slides=[].slice.call(stage.querySelectorAll(':scope > section'));
+  var i=0, step=0;
+  var notes=document.getElementById('notes');
+
+  function frags(s){return [].slice.call(s.querySelectorAll('.fragment'))}
+  function fit(){
+    var w=window.innerWidth,h=window.innerHeight,m=w<700?12:40;
+    var s=Math.min((w-m)/1920,(h-m)/1080);
+    stage.style.transform='translate(-50%,-50%) scale('+s+')';
+  }
+  function paint(){
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    frags(slides[i]).forEach(function(f,k){f.classList.toggle('visible',k<step);f.classList.toggle('current-fragment',k===step-1)});
+    document.getElementById('count').textContent=(i+1)+' / '+slides.length;
+    document.getElementById('bar').style.width=(i/(slides.length-1)*100)+'%';
+    var a=slides[i].querySelector('aside');
+    notes.innerHTML='<b>Notas · slide '+(i+1)+'</b>'+(a?a.innerHTML:'Sem notas neste slide.');
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){}
+  }
+  function show(n,s){i=Math.max(0,Math.min(slides.length-1,n));step=s||0;
+    var an=slides[i];an.classList.remove('on');void an.offsetWidth;paint()}
+  function next(){var f=frags(slides[i]);if(step<f.length){step++;paint()}else if(i<slides.length-1)show(i+1)}
+  function prev(){if(step>0){step--;paint()}else if(i>0)show(i-1,frags(slides[i-1]).length)}
+  function toggleFull(){try{if(!document.fullscreenElement)document.documentElement.requestFullscreen().catch(function(){});else document.exitFullscreen().catch(function(){})}catch(e){}}
+
+  document.addEventListener('keydown',function(e){
+    var k=e.key;
+    if(k==='ArrowRight'||k==='ArrowDown'||k===' '||k==='PageDown'||k==='Enter'){e.preventDefault();next()}
+    else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'||k==='Backspace'){e.preventDefault();prev()}
+    else if(k==='Home'){e.preventDefault();show(0)}
+    else if(k==='End'){e.preventDefault();show(slides.length-1)}
+    else if(k==='f'||k==='F'){e.preventDefault();toggleFull()}
+    else if(k==='n'||k==='N'){e.preventDefault();notes.classList.toggle('on')}
+  });
+  document.getElementById('next').addEventListener('click',next);
+  document.getElementById('prev').addEventListener('click',prev);
+  document.getElementById('full').addEventListener('click',toggleFull);
+  document.getElementById('notesBtn').addEventListener('click',function(){notes.classList.toggle('on')});
+  stage.addEventListener('click',function(e){var r=stage.getBoundingClientRect();if(e.clientX<r.left+r.width*.25)prev();else next()});
+  var x0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50){dx<0?next():prev()}x0=null},{passive:true});
+  window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  fit();
+  var h=parseInt(location.hash.slice(1),10);
+  show(h>0?h-1:0);
+})();
+</script>
+</body>
+</html>
