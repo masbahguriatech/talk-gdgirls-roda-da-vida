@@ -90,7 +90,7 @@ img/jaqueline/                          slides da talk da Jaqueline Michaelsen
 img/vitoria/                            slides da talk da Vitória Santos
 ```
 
-O QR code do GDG Porto Alegre, o do grupo do GDGirls no WhatsApp e o da Minha roda da vida estão em `img/`.
+O QR code do GDG Porto Alegre, o do grupo do GDGirls no WhatsApp, o da Minha roda da vida e o da pesquisa de satisfação estão em `img/`.
 
 ## 💬 Bora conversar
 
