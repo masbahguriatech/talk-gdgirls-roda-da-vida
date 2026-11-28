@@ -78,7 +78,7 @@ Abra o `index.html` no navegador. Não tem build nem dependência.
 
 No celular dá pra passar com swipe ou tocando no lado direito da tela. Pra abrir direto num slide, use o número no fim do link, como `index.html#14`.
 
-Tem também um PDF de backup com os 69 slides: `olhar-para-dentro-planejar-2027.pdf`.
+Tem também um PDF de backup com os 70 slides: `olhar-para-dentro-planejar-2027.pdf`.
 
 ## 🗂️ Arquivos
 
