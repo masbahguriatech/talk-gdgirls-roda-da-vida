@@ -78,7 +78,7 @@ Abra o `index.html` no navegador. Não tem build nem dependência.
 
 No celular dá pra passar com swipe ou tocando no lado direito da tela. Pra abrir direto num slide, use o número no fim do link, como `index.html#14`.
 
-Tem também um PDF de backup com os 66 slides: `olhar-para-dentro-planejar-2027.pdf`.
+Tem também um PDF de backup com os 69 slides: `olhar-para-dentro-planejar-2027.pdf`.
 
 ## 🗂️ Arquivos
 
@@ -88,6 +88,7 @@ olhar-para-dentro-planejar-2027.pdf     backup em PDF, um slide por página
 img/                                    fotos, logos e QR codes dos slides
 img/jaqueline/                          slides da talk da Jaqueline Michaelsen
 img/vitoria/                            slides da talk da Vitória Santos
+img/fiap/                               slides da FIAP
 ```
 
 O QR code do GDG Porto Alegre, o do grupo do GDGirls no WhatsApp, o da Minha roda da vida e o da pesquisa de satisfação estão em `img/`.
